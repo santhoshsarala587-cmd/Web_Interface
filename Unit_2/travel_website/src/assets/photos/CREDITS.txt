@@ -1,0 +1,52 @@
+PHOTO CREDITS
+=============
+munnar.jpg, munnar-1..5.jpg
+  Source: 'Hello Munnar' frontend, https://github.com/Kites-Foundation/hello-munnar-frontend
+  Published by Kites Foundation under the MIT License (notice below).
+  The original photographers are not named in that repository. If you publish this site
+  publicly, consider replacing these with your own Munnar photos (same file names).
+
+-----
+MIT License
+
+Copyright (c) 2021 Kites Foundation
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-----
+TADA FALLS (stock photos, linked from Unsplash, not stored in this folder)
+  - "a waterfall in the middle of a lush green forest", Sreehari Devadas, Tirupati, Andhra Pradesh
+    https://unsplash.com/photos/a-waterfall-in-the-middle-of-a-lush-green-forest-h65CtlEbwJo
+  - Katiki Falls, Andhra Pradesh, Satish Dharmavarapu
+    https://unsplash.com/photos/9gsn1i3Mz6c
+  Both are free to use under the Unsplash License (https://unsplash.com/license).
+  They show waterfalls in Andhra Pradesh, not necessarily the Tada trail itself. Adding
+  tada.jpg to this folder replaces them automatically.
+
+-----
+DREAM DESTINATIONS + CULTURES (stock photos linked from Unsplash, free under the Unsplash License)
+  Swiss Alps    Fabrice Villard       https://unsplash.com/photos/low-angle-photo-of-mountain-peak-with-snows-UqGeqvrwBKg
+  Istanbul      Vitaly Gariev         https://unsplash.com/photos/a-large-building-with-many-pillars-and-arches-kler_J8aaTo
+  Patagonia     Paulius Dragunas      https://unsplash.com/photos/a-large-body-of-water-with-mountains-in-the-background-z1PdmuU8cnU
+  Cappadocia    Timur Garifov         https://unsplash.com/s/photos/kappadokien
+  Meghalaya     Abhishek Tirkey       https://unsplash.com/photos/_UwEhm6AMZQ
+  Ladakh        Aana                  https://unsplash.com/photos/a-group-of-trees-with-mountains-in-the-background-osib3Nv4U1g
+  Rajasthan     Mahesh Sharma         https://unsplash.com/photos/a-large-building-with-a-clock-tower-on-top-of-it-S5gi9ZKs9uE
+  Varanasi      Frank Holleman        https://unsplash.com/photos/three-person-riding-on-boat-surrounded-by-water-during-golden-hour-G_OgVWgR7GU
+  (Varanasi photo is also used on the Cultures page.)
+Drop <id>.jpg (e.g. ladakh.jpg) in this folder to replace any of them with your own.

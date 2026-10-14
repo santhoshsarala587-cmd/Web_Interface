@@ -1,0 +1,19 @@
+.section-heading { max-width: 46rem; }
+.section-heading__title { margin-top: 1rem; }
+.section-heading__copy {
+  margin-top: 1.5rem;
+  max-width: 38rem;
+  font-size: 1.125rem;
+  opacity: 0.88;
+}
+
+/* Words rise out of a mask one after another */
+.section-heading__title .word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-top: 0.08em; margin-top: -0.08em; }
+.section-heading__title .word > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.9s var(--ease);
+  transition-delay: calc(var(--w) * 70ms + 120ms);
+}
+.reveal.is-visible .section-heading__title .word > span { transform: none; }
+@media (prefers-reduced-motion: reduce) { .section-heading__title .word > span { transform: none; } }

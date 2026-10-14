@@ -1,0 +1,43 @@
+.dreams__intro { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 4rem; align-items: end; }
+.dreams__title { font-size: clamp(2.6rem, 5vw, 4.2rem); color: var(--forest); }
+.dreams__intro p { font-size: 1.05rem; }
+.dreams__inline { font-weight: 600; color: var(--forest); border-bottom: 2px solid var(--orange); }
+
+.dreams__filters { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 2.5rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.5rem 1.2rem;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--forest); border: 1.5px solid var(--forest); transition: background var(--t-fast), color var(--t-fast);
+}
+.chip:hover { background: rgba(23, 61, 50, 0.08); }
+.chip.is-active { color: var(--ivory); background: var(--forest); }
+.chip__count { font-size: 0.72rem; opacity: 0.7; }
+.dreams__reset {
+  display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.75rem; padding: 0 0.8rem;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange-deep);
+  border-bottom: 2px solid var(--orange);
+}
+.dreams__count { margin-top: 2rem; font-size: 0.9rem; color: #4a504c; }
+
+/* Editorial grid: varied card sizes, dense packing so filtered sets stay tidy */
+.dreams__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  grid-auto-rows: 13rem;
+  grid-auto-flow: dense;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.dreams__grid .dest { min-height: 0; grid-row: span 2; }
+.dreams__grid .dest--wide { grid-row: span 2; }
+@media (min-width: 900px) { .dreams__grid .dest--wide { grid-column: span 2; } }
+@media (max-width: 899px) { .dreams__grid { grid-auto-rows: 14rem; } }
+@media (max-width: 600px) { .dreams__grid .dest, .dreams__grid .dest--wide { grid-row: span 3; } .dreams__grid { grid-auto-rows: 10rem; } }
+
+.dreams-cta__inner { max-width: 44rem; }
+.dreams-cta h2 { color: var(--ivory); }
+.dreams-cta p { margin: 1.25rem 0 2rem; font-size: 1.15rem; opacity: 0.9; }
+@media (max-width: 760px) { .dreams__intro { grid-template-columns: 1fr; } }
+.chip { transition: background var(--t-fast), color var(--t-fast), transform var(--t-med); }
+.chip:hover { transform: translateY(-2px); }
+.chip.is-active { transform: translateY(-2px); box-shadow: 0 8px 16px -8px rgba(23, 61, 50, 0.6); }

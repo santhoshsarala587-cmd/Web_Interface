@@ -1,0 +1,9 @@
+.greetings__title { margin-top: 1rem; font-size: clamp(3rem, 8vw, 6.5rem); }
+.greetings__copy { margin-top: 1.5rem; max-width: 38rem; font-size: 1.1rem; opacity: 0.9; }
+.greetings__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: 1px; margin-top: 3rem; }
+.greetings__grid li { display: flex; flex-direction: column; gap: 0.3rem; padding: 1.75rem 1.5rem; box-shadow: 0 0 0 1px rgba(247, 245, 239, 0.16); overflow-wrap: anywhere; }
+.greetings__word { font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 2.7rem); font-weight: 800; text-transform: uppercase; color: var(--orange); line-height: 1; }
+.greetings__lang { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; }
+.cultures-cta__inner { max-width: 44rem; }
+.cultures-cta h2 { color: var(--ivory); }
+.cultures-cta p { margin: 1.25rem 0 2rem; font-size: 1.15rem; opacity: 0.9; }

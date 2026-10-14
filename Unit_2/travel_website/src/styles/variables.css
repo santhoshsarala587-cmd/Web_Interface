@@ -1,0 +1,40 @@
+/* Design tokens: colours, type, spacing, radii, motion */
+:root {
+  /* Colour */
+  --forest: #173d32;
+  --forest-deep: #0f2a22;
+  --ivory: #f7f5ef;
+  --sand: #ece7d8;
+  --charcoal: #171a18;
+  --sage: #a7b9a6;
+  --orange: #d77a45;
+  --orange-deep: #a24c1c; /* accessible orange for text on light backgrounds */
+  --white: #ffffff;
+
+  /* Type */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --section-y: clamp(4.5rem, 10vw, 8rem);
+  --container: 1200px;
+
+  /* Radii: kept sharp on purpose, with a soft option for small UI */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --t-fast: 0.2s ease;
+  --t-med: 0.35s var(--ease);
+  --t-slow: 0.8s var(--ease);
+
+  --nav-h: 4.5rem;
+}

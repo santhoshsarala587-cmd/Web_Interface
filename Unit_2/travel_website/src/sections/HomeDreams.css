@@ -1,0 +1,10 @@
+.home-dreams__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.home-dreams .dest { min-height: 32rem; }
+.home-dreams__grid > :nth-child(even) { margin-top: 2.5rem; }
+.home-dreams__cta { margin-top: 3.5rem; }
+@media (max-width: 1100px) { .home-dreams__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .home-dreams__grid { grid-template-columns: 1fr; }
+  .home-dreams__grid > :nth-child(even) { margin-top: 0; }
+  .home-dreams .dest { min-height: 28rem; }
+}

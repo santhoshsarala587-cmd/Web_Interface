@@ -1,0 +1,151 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  overflow-x: clip;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--charcoal);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, p, ul, ol, blockquote, figure, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+img { display: block; max-width: 100%; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+h2 { font-size: clamp(2.8rem, 6.5vw, 5.25rem); }
+h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+[id] { scroll-margin-top: calc(var(--nav-h) + 1rem); }
+
+/* Layout helpers */
+.container { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.section { padding-block: var(--section-y); }
+.fill-img { width: 100%; height: 100%; object-fit: cover; }
+.img-fallback { background: linear-gradient(135deg, var(--forest), var(--forest-deep)); }
+
+/* Surfaces */
+.surface-ivory { background: var(--ivory); color: var(--charcoal); }
+.surface-sand { background: var(--sand); color: var(--charcoal); }
+.surface-forest { background: var(--forest); color: var(--ivory); }
+.surface-charcoal { background: var(--charcoal); color: var(--ivory); }
+.surface-ivory .eyebrow, .surface-sand .eyebrow { color: var(--orange-deep); }
+.surface-forest .eyebrow, .surface-charcoal .eyebrow { color: var(--orange); }
+.surface-ivory .section-heading__title, .surface-sand .section-heading__title { color: var(--forest); }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 2rem; height: 2px; background: currentColor; flex: none; }
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: var(--ivory);
+}
+.tag--visited { background: var(--orange); }
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.75rem 1.1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  background: var(--orange);
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--t-slow), transform var(--t-slow);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ================= Motion & polish ================= */
+::selection { color: var(--ivory); background: var(--forest); }
+html { scrollbar-color: var(--forest) var(--ivory); scrollbar-width: thin; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Page fade-in on route change */
+.page-enter { animation: page-in 0.7s var(--ease) both; }
+@keyframes page-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* Image fade-in once loaded */
+.img-fade { opacity: 0; }
+.img-fade.img-loaded { animation: img-in 1s ease both; }
+@keyframes img-in { from { opacity: 0; filter: blur(8px); } to { opacity: 1; filter: blur(0); } }
+
+/* Wipe reveal: image frames uncover left-to-right as they scroll into view.
+   Negative insets keep offset box-shadows visible. */
+.reveal .wipe { clip-path: inset(-24px 100% -24px -24px); transition: clip-path 1.2s var(--ease) 0.1s; }
+.reveal.is-visible .wipe { clip-path: inset(-24px -24px -24px -24px); }
+.reveal .wipe--delay { transition-delay: 0.5s; }
+
+/* Surface texture: subtle film grain on dark sections */
+.surface-forest, .surface-charcoal { position: relative; isolation: isolate; }
+.surface-forest::before, .surface-charcoal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Soft float for decorative accents */
+@keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-14px) rotate(2deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .wipe { clip-path: none; }
+  .img-fade { opacity: 1; }
+  .page-enter { animation: none; }
+}

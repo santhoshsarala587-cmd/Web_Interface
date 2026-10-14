@@ -1,0 +1,11 @@
+.intro__grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+.intro__art { position: relative; isolation: isolate; aspect-ratio: 1 / 1.15; }
+.intro__img { position: absolute; margin: 0; overflow: hidden; background: var(--forest); }
+.intro__img img, .intro__img .img-fallback { width: 100%; height: 100%; object-fit: cover; }
+.intro__img--main { inset: 0 22% 12% 0; }
+.intro__img--small { right: 0; bottom: 0; width: 52%; aspect-ratio: 4 / 3; border: 0.5rem solid var(--ivory); }
+.intro__block { position: absolute; top: -1.2rem; right: 14%; width: 28%; aspect-ratio: 1; background: var(--orange); z-index: -1; }
+.intro__copy { margin-top: 2rem; max-width: 34rem; font-size: 1.125rem; }
+.intro__copy p + p { margin-top: 1.25rem; }
+@media (max-width: 860px) { .intro__grid { grid-template-columns: 1fr; } .intro__art { max-width: 32rem; } }
+.intro__block { animation: float 7s ease-in-out infinite; }

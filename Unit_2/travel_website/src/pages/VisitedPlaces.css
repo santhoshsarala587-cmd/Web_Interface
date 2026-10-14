@@ -1,0 +1,11 @@
+.visited-intro { padding-block: 2.5rem 0; }
+.visited-intro__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; font-size: 1rem; }
+.visited-intro__inner p { line-height: 2.2; }
+.visited-intro__inner .tag { margin-right: 0.5rem; }
+.tag--dream-light { color: var(--ivory); background: var(--forest); }
+.inline-link { font-weight: 600; color: var(--forest); border-bottom: 2px solid var(--orange); }
+.visited-features { padding-top: clamp(3rem, 7vw, 5rem); }
+.visited-cta__inner { max-width: 44rem; }
+.visited-cta h2 { color: var(--ivory); }
+.visited-cta p { margin: 1.25rem 0 2rem; font-size: 1.15rem; opacity: 0.9; }
+@media (max-width: 760px) { .visited-intro__inner { grid-template-columns: 1fr; } }

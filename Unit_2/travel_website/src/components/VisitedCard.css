@@ -1,0 +1,22 @@
+.visited-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid rgba(23, 26, 24, 0.12); }
+.visited-card__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--forest); }
+.visited-card__media img, .visited-card__media .img-fallback, .visited-card__media svg {
+  width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease);
+}
+.visited-card:hover .visited-card__media > :first-child { transform: scale(1.05); }
+.visited-card__status { position: absolute; top: 1rem; left: 1rem; display: inline-flex; align-items: center; gap: 0.35rem; }
+.visited-card__body { padding: 1.5rem 1.6rem 1.8rem; }
+.visited-card__region { font-size: 0.85rem; font-weight: 600; color: var(--orange-deep); }
+.visited-card__name { margin-top: 0.2rem; font-size: clamp(2.4rem, 4vw, 3.4rem); color: var(--forest); }
+.visited-card__text { margin-top: 0.8rem; color: #3b413d; }
+.visited-card__link {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; margin-top: 0.8rem;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest);
+  border-bottom: 2px solid var(--orange); transition: gap var(--t-med);
+}
+.visited-card__link:hover { gap: 0.9rem; }
+
+.visited-card { transition: transform var(--t-med), box-shadow var(--t-med), opacity var(--t-slow); }
+.visited-card.is-visible:hover { transform: translateY(-8px); box-shadow: 0 26px 40px -22px rgba(23, 61, 50, 0.5); }
+.visited-card__status svg { animation: pin-bob 1.8s ease-in-out infinite; }
+@keyframes pin-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }

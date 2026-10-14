@@ -1,0 +1,54 @@
+.passions__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.passion { position: relative; display: flex; overflow: hidden; isolation: isolate; border: 1px solid rgba(247, 245, 239, 0.14); }
+.passion__label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.passion__title { margin-top: 0.5rem; margin-bottom: 0.9rem; }
+.passion__cta {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; margin-top: 1rem;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  border-bottom: 2px solid var(--orange); transition: gap var(--t-med), color var(--t-fast);
+}
+.passion__cta:hover { gap: 0.9rem; color: var(--orange); }
+
+/* A: full-bleed photo, oversized type */
+.passion--explore { grid-column: 1 / 8; grid-row: 1 / 3; align-items: flex-end; min-height: 38rem; color: var(--ivory); background: var(--forest-deep); }
+.passion--explore > img, .passion--explore > .img-fallback { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.passion--explore:hover > img { transform: scale(1.05); }
+.passion__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(10, 20, 16, 0.95) 0%, rgba(10, 20, 16, 0.78) 40%, rgba(10, 20, 16, 0.1) 75%); }
+.passion--explore .passion__label { color: var(--sage); }
+.passion--explore .passion__title { font-size: clamp(3rem, 5.5vw, 4.8rem); line-height: 0.9; max-width: 11ch; }
+.passion--explore .passion__body { padding: clamp(1.5rem, 3.5vw, 2.75rem); max-width: 36rem; }
+
+/* B: light split card */
+.passion--culture { grid-column: 8 / 13; flex-direction: column; color: var(--charcoal); background: var(--ivory); }
+.passion__thumb { aspect-ratio: 16 / 9; overflow: hidden; }
+.passion__thumb img, .passion__thumb .img-fallback { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.passion--culture:hover .passion__thumb img { transform: scale(1.06); }
+.passion--culture .passion__body { padding: 1.5rem 1.75rem 1.9rem; }
+.passion--culture .passion__label { color: var(--orange-deep); }
+.passion--culture .passion__title { font-size: clamp(2.2rem, 3.4vw, 3rem); color: var(--forest); }
+
+/* C: dark court card */
+.passion--sport { grid-column: 8 / 13; align-items: flex-end; min-height: 20rem; color: var(--ivory); background: var(--charcoal); border-color: var(--orange); }
+.passion__court { position: absolute; inset: 0 0 0 38%; z-index: -2; opacity: 0.9; }
+.passion__court img, .passion__court .court, .passion__court svg { width: 100%; height: 100%; object-fit: cover; }
+.passion--sport::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to right, var(--charcoal) 38%, rgba(23, 26, 24, 0.55) 70%, rgba(23, 26, 24, 0.3)); }
+.passion--sport .passion__label { color: var(--orange); }
+.passion--sport .passion__title { font-size: clamp(2.2rem, 3.4vw, 3rem); }
+.passion--sport .passion__body { padding: 1.75rem; max-width: 20rem; }
+
+@media (max-width: 999px) {
+  .passions__grid { grid-template-columns: 1fr; }
+  .passion--explore, .passion--culture, .passion--sport { grid-column: 1; grid-row: auto; }
+  .passion--explore { min-height: 32rem; }
+}
+@media (max-width: 520px) {
+  .passion--sport { min-height: 24rem; }
+  .passion__court { inset: 0; opacity: 0.55; }
+  .passion--sport::before { background: linear-gradient(to top, var(--charcoal) 30%, rgba(23, 26, 24, 0.4)); }
+}

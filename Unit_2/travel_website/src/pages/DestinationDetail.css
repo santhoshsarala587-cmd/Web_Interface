@@ -1,0 +1,22 @@
+.detail__back { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid var(--orange); }
+.detail__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.detail__heading { font-size: clamp(2.6rem, 5vw, 4rem); color: var(--forest); }
+.detail__text { margin-top: 1.5rem; max-width: 38rem; font-size: 1.15rem; }
+.detail__sub { margin-top: 2.5rem; font-size: 1.8rem; color: var(--forest); }
+.detail__chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.detail__chips li { padding: 0.4rem 0.9rem; font-weight: 500; color: var(--forest); border: 1.5px solid var(--forest); }
+.detail__figure { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--forest); box-shadow: 12px 12px 0 var(--orange); }
+.detail__figure img, .detail__figure .img-fallback, .detail__figure svg { width: 100%; height: 100%; object-fit: cover; }
+.detail__facts { margin-top: 2.5rem; border-top: 1px solid rgba(23, 26, 24, 0.2); }
+.detail__facts > div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(23, 26, 24, 0.2); }
+.detail__facts dt { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange-deep); }
+.detail__facts dd { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.detail__pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid rgba(23, 26, 24, 0.2); }
+.detail__pager a { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: var(--forest); transition: color var(--t-fast); }
+.detail__pager a:hover { color: var(--orange-deep); }
+.detail-related h2 { font-size: clamp(2.4rem, 5vw, 4rem); }
+.detail-related__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.detail-related .dest { min-height: 28rem; }
+@media (max-width: 860px) { .detail__grid { grid-template-columns: 1fr; } .detail__aside { order: -1; max-width: 26rem; } }
+.detail__credit { margin-top: 1.1rem; font-size: 0.8rem; color: #5a615c; }
+.detail__credit a { font-weight: 600; color: var(--forest); border-bottom: 1px solid var(--orange); }
