@@ -1,0 +1,5 @@
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin: 0; }
+.stats__item { display: flex; flex-direction: column-reverse; gap: 0.35rem; padding-top: 1.1rem; border-top: 3px solid var(--orange); }
+.stats__value { margin: 0; font-family: var(--font-display); font-size: clamp(3.4rem, 7vw, 5.5rem); font-weight: 800; line-height: 0.9; font-variant-numeric: tabular-nums; }
+.stats__label { max-width: 14rem; font-size: 0.95rem; line-height: 1.35; opacity: 0.85; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.25rem; } }

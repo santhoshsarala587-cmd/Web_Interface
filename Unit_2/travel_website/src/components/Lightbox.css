@@ -1,0 +1,20 @@
+.lightbox { position: fixed; inset: 0; z-index: 100; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 0.5rem; padding: 4rem 1rem 1rem; background: rgba(10, 18, 15, 0.94); animation: lb-in 0.3s ease both; }
+@keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+.lightbox__btn { display: grid; place-items: center; width: 3rem; height: 3rem; color: var(--ivory); border: 1.5px solid rgba(247, 245, 239, 0.4); border-radius: var(--radius-pill); transition: background var(--t-fast), color var(--t-fast); }
+.lightbox__btn:hover { color: var(--charcoal); background: var(--orange); border-color: var(--orange); }
+.lightbox__close { position: absolute; top: 0.75rem; right: 0.75rem; }
+.lightbox__figure { display: flex; flex-direction: column; align-items: center; min-width: 0; margin: 0; color: var(--ivory); }
+.lightbox__img { display: grid; place-items: center; width: 100%; max-height: calc(100vh - 11rem); animation: lb-img 0.45s var(--ease) both; }
+@keyframes lb-img { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
+.lightbox__img img { width: auto; max-width: 100%; max-height: calc(100vh - 11rem); object-fit: contain; }
+.lightbox figcaption { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: baseline; justify-content: center; margin-top: 1rem; text-align: center; }
+.lightbox figcaption strong { font-size: 1.05rem; }
+.lightbox figcaption span { font-size: 0.82rem; opacity: 0.7; }
+.lightbox figcaption em { font-size: 0.82rem; font-style: normal; color: var(--orange); }
+@media (max-width: 640px) {
+  .lightbox { grid-template-columns: 1fr; padding-top: 4rem; }
+  .lightbox__nav { position: absolute; bottom: 1rem; }
+  .lightbox__nav--prev { left: 1rem; }
+  .lightbox__nav--next { right: 1rem; }
+  .lightbox figcaption { margin-bottom: 4rem; }
+}

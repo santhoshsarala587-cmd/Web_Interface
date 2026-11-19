@@ -1,0 +1,44 @@
+.jd__back { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid var(--orange); }
+.jd-intro__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+.jd-intro__title, .jd-story__title { margin-top: 0.8rem; font-size: clamp(2.6rem, 5vw, 4.2rem); color: var(--forest); }
+.jd-intro__lead { margin-top: 1.5rem; max-width: 38rem; font-size: 1.2rem; }
+.jd-facts dl { border-top: 1px solid var(--line); }
+.jd-facts dl > div { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+.jd-facts dt { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange-deep); }
+.jd-facts dd { display: flex; flex-direction: column; gap: 0.35rem; }
+.jd-facts a { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; color: var(--forest); border-bottom: 1.5px solid var(--orange); width: fit-content; }
+.jd-facts .tag--visited { display: inline-flex; align-items: center; gap: 0.35rem; width: fit-content; }
+
+.jd-story__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.jd-story__text > p:not(.eyebrow) { margin-top: 1.1rem; max-width: 36rem; font-size: 1.1rem; }
+.jd-story__photo { display: block; width: 100%; aspect-ratio: 5 / 4; overflow: hidden; background: var(--forest); box-shadow: 12px 12px 0 var(--sage); cursor: zoom-in; }
+.jd-story__photo img, .jd-story__photo .img-fallback { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.jd-story__photo:hover img { transform: scale(1.05); }
+
+.jd-sample { margin-top: 1.5rem; padding: 1rem 1.2rem; font-size: 0.92rem; color: var(--muted); border: 2px dashed var(--line); background: rgba(255, 255, 255, 0.5); }
+.jd-sample__title { display: block; margin-bottom: 0.4rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange-deep); }
+.jd-sample li { position: relative; padding-left: 1rem; }
+.jd-sample li::before { content: '+'; position: absolute; left: 0; color: var(--orange-deep); }
+.jd-sample code { padding: 0.05rem 0.3rem; background: rgba(23, 26, 24, 0.08); font-size: 0.85em; }
+.jd-sample--wide { margin-top: 2rem; }
+
+.jd-high__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1px; margin-top: 3rem; }
+.jd-high__grid li { padding: 1.75rem 1.5rem; box-shadow: 0 0 0 1px rgba(247, 245, 239, 0.18); transition: background var(--t-med); }
+.jd-high__grid li:hover { background: rgba(215, 122, 69, 0.1); }
+.jd-high__grid h3 { font-size: 1.9rem; color: var(--orange); }
+.jd-high__grid p { margin-top: 0.6rem; opacity: 0.9; }
+
+.jd-gallery__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); gap: 0.9rem; margin-top: 2.5rem; }
+.jd-gallery__grid button { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: var(--forest); cursor: zoom-in; }
+.jd-gallery__grid img, .jd-gallery__grid .img-fallback { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--ease); }
+.jd-gallery__grid button:hover img { transform: scale(1.07); }
+.jd-gallery__grid span { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem 0.9rem 0.7rem; font-size: 0.85rem; color: var(--ivory); text-align: left; background: linear-gradient(to top, rgba(10, 20, 16, 0.85), transparent); }
+.jd-credit { margin-top: 1.5rem; font-size: 0.8rem; color: var(--muted); }
+
+.jd-reflect__inner { max-width: 50rem; }
+.jd-reflect blockquote { margin: 1.25rem 0 1rem; padding-left: 1.5rem; font-size: clamp(1.3rem, 2.4vw, 1.8rem); font-weight: 500; line-height: 1.4; color: var(--forest); border-left: 4px solid var(--orange); }
+
+.jd-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 3rem; }
+.jd-pager > a:not(.btn) { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; text-transform: uppercase; color: var(--forest); transition: color var(--t-fast); }
+.jd-pager > a:not(.btn):hover { color: var(--orange-deep); }
+@media (max-width: 860px) { .jd-intro__grid, .jd-story__grid { grid-template-columns: 1fr; } }

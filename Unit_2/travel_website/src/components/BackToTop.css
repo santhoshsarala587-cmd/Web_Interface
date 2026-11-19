@@ -1,0 +1,19 @@
+.back-to-top {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--charcoal);
+  background: var(--orange);
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s var(--ease), visibility 0s 0.3s, background 0.2s;
+}
+.back-to-top.is-shown { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.back-to-top:hover { background: var(--ivory); }

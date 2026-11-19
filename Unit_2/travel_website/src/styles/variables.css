@@ -1,0 +1,81 @@
+/* Design tokens: colours, type, spacing, radii, motion */
+:root {
+  /* Colour */
+  --forest: #173d32;
+  --forest-deep: #0f2a22;
+  --ivory: #f7f5ef;
+  --sand: #ece7d8;
+  --charcoal: #171a18;
+  --sage: #a7b9a6;
+  --orange: #d77a45;
+  --orange-deep: #a24c1c; /* accessible orange for text on light backgrounds */
+  --white: #ffffff;
+  --muted: #4a504c; /* secondary text on light surfaces */
+  --line: rgba(23, 26, 24, 0.22); /* hairlines on light surfaces */
+
+  /* Type */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --section-y: clamp(4.5rem, 10vw, 8rem);
+  --container: 1200px;
+
+  /* Radii: kept sharp on purpose, with a soft option for small UI */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --t-fast: 0.2s ease;
+  --t-med: 0.35s var(--ease);
+  --t-slow: 0.8s var(--ease);
+
+  --nav-h: 4.5rem;
+}
+
+/* ───────────────── Dark theme ─────────────────
+   The light-surface tokens flip globally. Everything that is dark in BOTH themes
+   (hero, nav, footer, forest/charcoal sections, photo overlays, orange buttons)
+   restores the original values, so each component works unchanged in either theme. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --ivory: #0e1612;
+  --sand: #151f19;
+  --charcoal: #e9e6db;
+  --forest: #b7d3b9;
+  --forest-deep: #cfe3d0;
+  --orange-deep: #f0a574;
+  --white: #1a2620;
+  --muted: #b3bcb2;
+  --line: rgba(247, 245, 239, 0.22);
+}
+:root[data-theme='dark'] :is(
+  .surface-forest, .surface-charcoal, .hero, .page-hero, .navbar, .footer, .marquee, .closing,
+  .toast, .lightbox, .dest, .wish--icon, .wish.is-on, .btn--primary, .btn--ghost, .tag--visited,
+  .gallery__cap, .jd-gallery__grid span, .kskill__n, .cblock--panel, .leaflet-container,
+  .back-to-top, .navbar__count, .skip-link, .court, .panel, .img-fallback, .tmap__pin--visited,
+  .tmap__pin--dream, .kex__court, .art-badge, .stock-badge
+) {
+  --ivory: #f7f5ef;
+  --sand: #ece7d8;
+  --charcoal: #171a18;
+  --forest: #173d32;
+  --forest-deep: #0f2a22;
+  --orange-deep: #a24c1c;
+  --white: #ffffff;
+  --muted: #4a504c;
+  --line: rgba(23, 26, 24, 0.22);
+}
+/* Cards that carry a light-coloured photo overlay keep light text */
+:root[data-theme='dark'] .surface-forest, :root[data-theme='dark'] .surface-charcoal { color: var(--ivory); }
+:root[data-theme='dark'] .visited-card, :root[data-theme='dark'] .tlist__item { border-color: rgba(247, 245, 239, 0.12); }
+:root[data-theme='dark'] .surface-forest .eyebrow, :root[data-theme='dark'] .surface-charcoal .eyebrow { color: var(--orange); }
+:root[data-theme='dark'] .about__portrait, :root[data-theme='dark'] .passion__frame, :root[data-theme='dark'] .story__frame { background: #173d32; }

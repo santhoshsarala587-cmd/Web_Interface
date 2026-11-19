@@ -1,0 +1,17 @@
+.closing { position: relative; display: grid; place-items: center; min-height: 90vh; padding-block: var(--section-y); overflow: hidden; isolation: isolate; color: var(--ivory); background: var(--forest-deep); text-align: center; }
+.closing .eyebrow { justify-content: center; color: var(--orange); }
+.closing__bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; }
+.closing__shade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgba(15, 42, 34, 0.7), rgba(10, 22, 18, 0.82)); }
+.closing__title { margin-top: 1.5rem; font-size: clamp(2.6rem, 8vw, 6.5rem); line-height: 0.95; }
+.closing__title span { display: block; }
+.closing__title span:last-child { color: var(--orange); }
+.closing__copy { margin: 2rem auto 0; max-width: 34rem; font-size: 1.15rem; opacity: 0.92; }
+.closing__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; margin-top: 2.5rem; }
+@media (min-width: 900px) and (hover: hover) and (prefers-reduced-motion: no-preference) { .closing__bg { background-attachment: fixed; } }
+.closing__link { margin-top: 1.5rem; }
+.closing__link a { font-weight: 600; letter-spacing: 0.06em; border-bottom: 2px solid var(--orange); padding-bottom: 0.15rem; transition: color var(--t-fast); }
+.closing__link a:hover { color: var(--orange); }
+.closing__title { font-size: clamp(2.4rem, 7vw, 5.5rem); }
+.closing__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.1rem 1.6rem; margin-top: 2.25rem; }
+.closing__links a { display: inline-flex; align-items: center; min-height: 2.75rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 2px solid transparent; transition: color var(--t-fast), border-color var(--t-fast); }
+.closing__links a:hover, .closing__links a:focus-visible { color: var(--orange); border-bottom-color: var(--orange); }

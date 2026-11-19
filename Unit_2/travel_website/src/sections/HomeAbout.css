@@ -1,0 +1,20 @@
+.about__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+.about__art { position: relative; padding-bottom: 14%; }
+.about__portrait { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--forest); box-shadow: 14px 14px 0 var(--sage); }
+.about__portrait img, .about__portrait svg { width: 100%; height: 100%; object-fit: cover; }
+.about__small { position: absolute; right: -6%; bottom: 0; width: 48%; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; background: var(--forest); border: 0.5rem solid var(--ivory); }
+.about__small img { width: 100%; height: 100%; object-fit: cover; }
+.about__copy { margin-top: 1.75rem; max-width: 36rem; }
+.about__copy p + p { margin-top: 1.1rem; }
+.about__lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem; margin-top: 2.25rem; padding-top: 1.75rem; border-top: 1px solid rgba(127, 140, 128, 0.4); }
+.about__label { font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: none; line-height: 1.3; color: var(--orange-deep); }
+.about__traits, .about__interests { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+.about__traits li, .about__interests li { padding: 0.3rem 0.75rem; font-size: 0.92rem; font-weight: 500; border: 1.5px solid var(--forest); color: var(--forest); }
+.about__interests li { border-color: rgba(127, 140, 128, 0.6); color: var(--charcoal); font-weight: 400; }
+.about__stats { margin-top: clamp(3.5rem, 8vw, 6rem); }
+
+@media (max-width: 860px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__art { max-width: 28rem; margin-inline: auto; width: 100%; }
+  .about__lists { grid-template-columns: 1fr; }
+}

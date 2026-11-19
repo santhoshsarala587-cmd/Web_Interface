@@ -1,0 +1,29 @@
+.mystory-about__grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(2.5rem, 7vw, 6rem); align-items: center; }
+.mystory-about__portrait { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: var(--forest); box-shadow: 14px 14px 0 var(--sage); }
+.mystory-about__portrait img, .mystory-about__portrait svg { width: 100%; height: 100%; object-fit: cover; }
+.mystory-about__copy { margin-top: 1.75rem; max-width: 38rem; font-size: 1.12rem; }
+.mystory-about__copy p + p { margin-top: 1.1rem; }
+.mystory-about__facts { font-weight: 600; color: var(--orange-deep); }
+
+.traits { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin-top: clamp(3rem, 7vw, 5rem); border-top: 3px solid var(--forest); }
+.traits li { padding: 1.25rem 1.25rem 0 0; }
+.traits li + li { padding-left: 1.25rem; border-left: 1px solid rgba(127, 140, 128, 0.35); }
+.traits h3 { font-size: clamp(1.8rem, 2.6vw, 2.2rem); color: var(--forest); }
+.traits p { margin-top: 0.4rem; font-size: 0.95rem; color: var(--muted); }
+
+.mystory-numbers { padding-block: clamp(3.5rem, 7vw, 5.5rem); }
+
+.mystory-travel__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2rem); margin-top: 3rem; }
+
+.mystory-cta__inner h2 { max-width: 16ch; font-size: clamp(3rem, 8vw, 6.5rem); color: var(--ivory); }
+.mystory-cta__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.25rem; }
+
+@media (max-width: 960px) {
+  .traits { grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 0; }
+  .traits li, .traits li + li { padding: 1.1rem 1rem 1.1rem 0; border-left: 0; border-top: 3px solid var(--forest); }
+}
+@media (max-width: 860px) {
+  .mystory-about__grid, .mystory-travel__grid { grid-template-columns: 1fr; }
+  .mystory-about__media { max-width: 26rem; }
+}
+@media (max-width: 480px) { .traits { grid-template-columns: 1fr; } }

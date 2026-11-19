@@ -1,0 +1,4 @@
+.notfound { display: grid; align-items: center; min-height: 100vh; padding-block: 8rem 4rem; }
+.notfound h1 { margin-top: 1rem; font-size: clamp(3.5rem, 10vw, 8rem); }
+.notfound p:not(.eyebrow) { margin-top: 1.25rem; max-width: 30rem; font-size: 1.15rem; }
+.notfound__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }

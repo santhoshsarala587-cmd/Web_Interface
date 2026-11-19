@@ -1,0 +1,25 @@
+.tmap__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 1.25rem; }
+.tmap__legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; font-weight: 500; }
+.tmap__legend li { display: flex; align-items: center; gap: 0.6rem; }
+.tmap__pin { display: grid; place-items: center; width: 1.6rem; height: 1.6rem; font-size: 0.8rem; font-weight: 700; border: 2px solid var(--white); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25); }
+.tmap__pin--visited { color: var(--charcoal); background: var(--orange); border-radius: 50%; }
+.tmap__pin--dream { color: var(--ivory); background: var(--forest); border-radius: 3px; transform: rotate(0); }
+.tmap__views { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tmap__note { margin-top: 0.9rem; font-size: 0.82rem; color: var(--muted); }
+.tlist__title { font-size: clamp(2.6rem, 5vw, 4rem); color: var(--forest); }
+.tlist__lead { margin-top: 0.8rem; font-size: 1.05rem; }
+.tlist__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.tlist__item { display: flex; flex-direction: column; padding: 0; overflow: hidden; background: var(--white); border-top: 4px solid var(--forest); transition: transform var(--t-med), box-shadow var(--t-med), opacity var(--t-slow); }
+.tlist__item--visited { border-top-color: var(--orange); }
+.tlist__item.is-visible:hover { transform: translateY(-5px); box-shadow: 0 20px 34px -20px rgba(23, 61, 50, 0.5); }
+.tlist__media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--forest); }
+.tlist__media img, .tlist__media .img-fallback, .tlist__media svg { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.tlist__item:hover .tlist__media > :first-child { transform: scale(1.07); }
+.tlist__media .tag { position: absolute; top: 0.7rem; left: 0.7rem; }
+.tlist__media .art-badge { right: 0.7rem; bottom: 0.7rem; }
+.tlist__item--visited .tlist__media .tag { background: var(--orange); }
+.tlist__body { display: grid; gap: 0.25rem; padding: 1.1rem 1.3rem 1.3rem; }
+.tlist__item h3 { font-size: 1.9rem; color: var(--forest); }
+.tlist__item p { font-size: 0.92rem; color: var(--muted); }
+.tlist__body div { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin-top: 0.6rem; }
+.tlist__body a { display: inline-flex; align-items: center; gap: 0.3rem; min-height: 2.25rem; font-size: 0.85rem; font-weight: 600; color: var(--forest); border-bottom: 1.5px solid var(--orange); }
